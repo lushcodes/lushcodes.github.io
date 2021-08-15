@@ -137,7 +137,7 @@ postPeep = (content) => {
     body: JSON.stringify({"peep": {"user_id":session.user_id, "body":content}})
     })
   .then(response => {
-    console.log(response);
+    location.reload();
     return response.json()
   })
   .then(json => {
