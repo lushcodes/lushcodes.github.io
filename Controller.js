@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const peepData = new FormData(peepForm);
     const content = peepData.get('content');
     postPeep(content);
+    location.reload();
   })
   
 
@@ -137,7 +138,6 @@ postPeep = (content) => {
     body: JSON.stringify({"peep": {"user_id":session.user_id, "body":content}})
     })
   .then(response => {
-    location.reload();
     return response.json()
   })
   .then(json => {
